@@ -30,7 +30,7 @@ const addTodo = (todo: Todo) => {
     const item = document.createElement("li");
     const label = document.createElement("label");
     const checkbox = document.createElement("input");
-    const labelText = document.createElement("p");
+    const labelText = document.createElement("span");
     labelText.append(todo.name)
     checkbox.type = "checkbox";
     checkbox.classList.add('checkbox');

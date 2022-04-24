@@ -1,14 +1,154 @@
+/* Reset */
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+body {
+  line-height: 1;
+}
+
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section {
+  display: block;
+}
+
+nav ul {
+  list-style :none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+input, select {
+  vertical-align: middle;
+}
+
+/* Styles */
 :root {
-    color-scheme: light dark;
+    --brand: #2979ff;
+    --brand-hover: #143C7F;
+}
+
+html { font-size: 20px; }
+
+h1 {
+    font-size: 3rem;
+    color: var(--brand);
 }
 
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+#new-todo-form {
+    display: flex;
+    padding: 1rem 0;
+}
+
+#new-todo-name {
+    font-size: 20px;
+}
+
+#new-todo-button {
+    margin-left: 1rem;
+    padding: 0.5rem;
+    border-radius: 100%;
+    background-color: var(--brand);
+    color: white;
+    cursor: pointer;
+    border: none;
+}
+
+#new-todo-button:hover {
+    background-color: var(--brand-hover);
+}
+
+.checkbox {
+    margin: 0;
+    margin-right: 1rem;
+    cursor: pointer;
+    height: 1.5rem;
+    width: 1.5rem;
+    appearance: none;
+    border: 1px solid var(--brand);
+    border-radius: 4px;
+    transition-duration: 0.3s;
+}
+
+.checkbox:checked {
+    background-color: var(--brand);
+}
+
+.checkbox:checked + span::before {
+    content: '\2713';
+    display: block;
+    color: white;
+    position: absolute;
+    left: 0.4rem;
+    top: 0.3rem;
+    cursor: pointer;
+}
+
+#todo-list li {
+    padding: 0.5rem 0;
+}
+
+#todo-list li label {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    position: relative;
 }
 
 @media (prefers-color-scheme: dark) {
