@@ -1,11 +1,40 @@
 import './style.css'
+import { v4 as uuid } from 'uuid';
 
-const app = document.querySelector<HTMLDivElement>('#app')!
+type Todo = {
+    id: string,
+    name: string,
+    completed: boolean,
+    created: Date
+}
 
-app.innerHTML = `
-  <h1>Todo List</h1>
-  <form id=new-task-form>
-    <input id="new-todo-name"></input>
-    <button id="new-todo-button">Add</button>
-  </form>
-`
+const todoList = document.querySelector<HTMLUListElement>("#todo-list");
+const newTodoForm = document.querySelector<HTMLFormElement>("#new-todo-form");
+const newTodoInput = document.querySelector<HTMLInputElement>("#new-todo-name");
+
+newTodoForm?.addEventListener("submit", e => {
+    e.preventDefault();
+    if (newTodoInput?.value == "" || newTodoInput?.value == null) return
+
+    const todo: Todo = {
+        id: uuid(),
+        name: newTodoInput.value,
+        completed: false,
+        created: new Date(),
+    };
+
+    addTodo(todo);
+});
+
+const addTodo = (todo: Todo) => {
+    const item = document.createElement("li");
+    const label = document.createElement("label");
+    const checkbox = document.createElement("input");
+    const labelText = document.createElement("p");
+    labelText.append(todo.name)
+    checkbox.type = "checkbox";
+    checkbox.classList.add('checkbox');
+    label.append(checkbox, labelText);
+    item.append(label);
+    todoList?.append(item);
+};
