@@ -57,6 +57,7 @@ const addTodoToDom = (todo: Todo) => {
     label.append(checkbox, labelText);
     item.append(label);
     todoList?.append(item);
+    if (newTodoInput) newTodoInput.value = "";
 }
 
 const addTodo = (todo: Todo) => {
