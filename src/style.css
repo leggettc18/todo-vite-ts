@@ -132,7 +132,7 @@ ul {
     background-color: var(--brand);
 }
 
-.checkbox:checked + span::before {
+.checkbox:checked + div::before {
     content: '\2713';
     display: block;
     color: white;
@@ -142,19 +142,35 @@ ul {
     cursor: pointer;
 }
 
-.checkbox + span {
+.checkbox + div {
     transition: 0.3s;
+    margin-right: auto;
 }
 
 #todo-list li {
     padding: 0.5rem 0;
 }
 
+#todo-list li {
+    display: flex;
+}
+
 #todo-list li label {
     display: flex;
+    justify-content: flex-start;
     align-items: center;
     text-align: center;
     position: relative;
+    width: 100%;
+}
+
+.close {
+    padding-left: 1rem;
+    font-size: 1.5rem;
+}
+
+.close:hover {
+    color: darkred;
 }
 
 .completed {

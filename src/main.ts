@@ -35,7 +35,16 @@ const addTodoToDom = (todo: Todo) => {
     const item = document.createElement("li");
     const label = document.createElement("label");
     const checkbox = document.createElement("input");
-    const labelText = document.createElement("span");
+    const labelText = document.createElement("div");
+    const deleteButton = document.createElement("div");
+    deleteButton.innerHTML= "&times;";
+    deleteButton.classList.add("close");
+    deleteButton.addEventListener("click", () => {
+        const todoIndex = todos.findIndex(task => task.id === todo.id);
+        todos.splice(todoIndex, 1);
+        localStorage.setItem("TODOS", JSON.stringify(todos));
+        item.remove();
+    });
     labelText.append(todo.name)
     checkbox.type = "checkbox";
     checkbox.classList.add('checkbox');
@@ -55,7 +64,7 @@ const addTodoToDom = (todo: Todo) => {
         localStorage.setItem("TODOS", JSON.stringify(todos));
     });
     label.append(checkbox, labelText);
-    item.append(label);
+    item.append(label, deleteButton);
     todoList?.append(item);
     if (newTodoInput) newTodoInput.value = "";
 }
