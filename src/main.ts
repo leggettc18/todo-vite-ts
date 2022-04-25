@@ -39,6 +39,21 @@ const addTodoToDom = (todo: Todo) => {
     labelText.append(todo.name)
     checkbox.type = "checkbox";
     checkbox.classList.add('checkbox');
+    if (todo.completed) {
+        checkbox.checked = true;
+        labelText.classList.add('completed');
+    }
+    checkbox.addEventListener("change", () => {
+        const todoIndex = todos.findIndex(task => task.id === todo.id);
+        if (checkbox.checked) {
+            labelText.classList.add('completed');
+            todos[todoIndex].completed = true;
+        } else {
+            labelText.classList.remove('completed');
+            todos[todoIndex].completed = false;
+        }
+        localStorage.setItem("TODOS", JSON.stringify(todos));
+    });
     label.append(checkbox, labelText);
     item.append(label);
     todoList?.append(item);

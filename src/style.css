@@ -141,6 +141,10 @@ ul {
     cursor: pointer;
 }
 
+.checkbox + span {
+    transition: 0.3s;
+}
+
 #todo-list li {
     padding: 0.5rem 0;
 }
@@ -152,8 +156,16 @@ ul {
     position: relative;
 }
 
+.completed {
+    text-decoration: line-through;
+    color: gray;
+}
+
 @media (prefers-color-scheme: dark) {
     #app {
         color: #959EA7;
+    }
+    .completed {
+        color: DimGray
     }
 }
