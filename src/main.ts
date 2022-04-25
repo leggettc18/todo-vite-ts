@@ -11,6 +11,11 @@ type Todo = {
 const todoList = document.querySelector<HTMLUListElement>("#todo-list");
 const newTodoForm = document.querySelector<HTMLFormElement>("#new-todo-form");
 const newTodoInput = document.querySelector<HTMLInputElement>("#new-todo-name");
+let todos: Todo[] = [];
+
+const todosString = localStorage.getItem("TODOS")
+
+if (todosString) todos = JSON.parse(todosString) as Todo[];
 
 newTodoForm?.addEventListener("submit", e => {
     e.preventDefault();
@@ -26,7 +31,7 @@ newTodoForm?.addEventListener("submit", e => {
     addTodo(todo);
 });
 
-const addTodo = (todo: Todo) => {
+const addTodoToDom = (todo: Todo) => {
     const item = document.createElement("li");
     const label = document.createElement("label");
     const checkbox = document.createElement("input");
@@ -37,4 +42,14 @@ const addTodo = (todo: Todo) => {
     label.append(checkbox, labelText);
     item.append(label);
     todoList?.append(item);
+}
+
+const addTodo = (todo: Todo) => {
+    addTodoToDom(todo);
+    todos.push(todo);
+    localStorage.setItem("TODOS", JSON.stringify(todos));
 };
+
+todos.forEach(todo => {
+    addTodoToDom(todo);
+})
