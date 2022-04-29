@@ -194,7 +194,7 @@ h1 {
 }
 
 .wrapper {
-    width: min(75%, 65ch);
+    width: min(max(75%, 10rem), 65ch);
     margin: auto;
 }
 
@@ -206,6 +206,46 @@ h1 {
 
 .radius {
     border-radius: 0.5rem;
+}
+
+.flex-grow {
+    flex-grow: 1;
+}
+
+.flex {
+  display: flex;
+  gap: var(--flex-gap, 1rem);
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.overflow-hidden {
+    overflow: scroll;
+    scrollbar-width: none;
+}
+
+.text-nowrap {
+    white-space: nowrap;
+}
+
+@media only screen and (min-width: 768px) {
+    .md\:flex-grow-0 {
+        flex-grow: 0;
+    }
+
+    .md\:flex-row {
+        flex-direction: row;
+    }
+
+    .md\:overflow-none {
+        overflow: none;
+    }
+
+    .md\:text-wrap {
+        white-space: normal;
+    }
 }
 
 /* Blocks */
@@ -232,19 +272,17 @@ ul {
   padding: 0;
 }
 
-.flex-row {
-  display: flex;
-  gap: var(--flex-gap, 1rem);
-}
+
 
 #new-todo-name {
   font-size: 20px;
-  flex-grow: 1;
+  flex-grow: 3;
   background-color: var(--list-item-bg);
   border: 0;
   border-bottom: 0.1rem solid var(--brand);
   transition: 0.3s;
   padding: 0.5rem;
+  min-width: none;
 }
 
 #new-todo-name:focus {
@@ -263,6 +301,7 @@ ul {
   cursor: pointer;
   border: none;
   transition: 0.3s;
+  min-width: 1rem;
 }
 
 .button:focus {
@@ -282,8 +321,8 @@ ul {
   margin-left: 0;
   margin-right: 1rem;
   cursor: pointer;
-  height: 1rem;
-  width: 1rem;
+  min-height: 1rem;
+  min-width: 1rem;
   appearance: none;
   border: 1px solid var(--brand);
   border-radius: 4px;
@@ -300,7 +339,7 @@ ul {
   color: white;
   position: absolute;
   left: 0.15rem;
-  top: 0.7rem;
+  top: 0.5rem;
   cursor: pointer;
 }
 
@@ -327,8 +366,6 @@ ul {
 
 #todo-list li label div {
   display: inline;
-  height: 20px;
-  line-height: 25px;
 }
 
 .close {

@@ -35,8 +35,10 @@ const addTodoToDom = (todo: Todo) => {
     const item = document.createElement("li");
     item.classList.add("list-item", "radius");
     const label = document.createElement("label");
+    label.classList.add("overflow-hidden", "md:overflow-none");
     const checkbox = document.createElement("input");
     const labelText = document.createElement("div");
+    labelText.classList.add("overflow-hidden", "text-nowrap", "md:text-wrap", "md:overflow-none");
     const deleteButton = document.createElement("button");
     deleteButton.innerHTML= "&times;";
     deleteButton.classList.add("close");

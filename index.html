@@ -10,12 +10,12 @@
 </head>
 
 <body>
-    <div id="app" class="wrapper">
+    <div id="app" class="wrapper overflow-hidden">
         <h1>Todo List</h1>
         <div class="w-full flow">
-            <form id=new-todo-form class="flex-row">
+            <form id=new-todo-form class="flex flex-col md:flex-row">
                 <input id="new-todo-name" class="radius" />
-                <button id="new-todo-button" class="radius | button" type="submit">Add</button>
+                <button id="new-todo-button" class="radius md:flex-grow-0 flex-grow | button" type="submit">Add</button>
             </form>
             <ul id="todo-list" class="flow"></ul>
         </div>
