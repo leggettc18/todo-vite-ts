@@ -224,6 +224,11 @@ h1 {
 .overflow-hidden {
     overflow: scroll;
     scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.overflow-hidden::-webkit-scrollbar {
+    display: none;
 }
 
 .text-nowrap {
