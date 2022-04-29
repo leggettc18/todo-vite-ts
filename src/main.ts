@@ -33,10 +33,11 @@ newTodoForm?.addEventListener("submit", e => {
 
 const addTodoToDom = (todo: Todo) => {
     const item = document.createElement("li");
+    item.classList.add("list-item", "radius");
     const label = document.createElement("label");
     const checkbox = document.createElement("input");
     const labelText = document.createElement("div");
-    const deleteButton = document.createElement("div");
+    const deleteButton = document.createElement("button");
     deleteButton.innerHTML= "&times;";
     deleteButton.classList.add("close");
     deleteButton.addEventListener("click", () => {

@@ -10,14 +10,14 @@
 </head>
 
 <body>
-    <div id="app">
+    <div id="app" class="wrapper">
         <h1>Todo List</h1>
-        <div>
-            <form id=new-todo-form>
-                <input id="new-todo-name" />
-                <button id="new-todo-button" type="submit">Add</button>
+        <div class="w-full flow">
+            <form id=new-todo-form class="flex-row">
+                <input id="new-todo-name" class="radius" />
+                <button id="new-todo-button" class="radius | button" type="submit">Add</button>
             </form>
-            <ul id="todo-list"></ul>
+            <ul id="todo-list" class="flow"></ul>
         </div>
     </div>
     <script type="module" src="/src/main.ts"></script>

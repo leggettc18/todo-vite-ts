@@ -1,134 +1,92 @@
 /* Reset */
 
-html,
+// Modern CSS reset: https://github.com/hankchizljaw/modern-css-reset
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default padding */
+ul,
+ol {
+  padding: 0;
+}
+
+/* Remove default margin */
 body,
-div,
-span,
-object,
-iframe,
 h1,
 h2,
 h3,
 h4,
-h5,
-h6,
 p,
-blockquote,
-pre,
-abbr,
-address,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-samp,
-small,
-strong,
-sub,
-sup,
-var,
-b,
-i,
-dl,
-dt,
-dd,
-ol,
 ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-figcaption,
+ol,
 figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section,
-summary,
-time,
-mark,
-audio,
-video {
+blockquote,
+dl,
+dd {
   margin: 0;
-  padding: 0;
-  border: 0;
-  outline: 0;
-  font-size: 100%;
-  vertical-align: baseline;
-  background: transparent;
 }
 
+/* Set core root defaults */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
 body {
-  line-height: 1;
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
 }
 
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-  display: block;
-}
-
-nav ul {
+/* Remove list styles on ul, ol elements with a class attribute */
+ul,
+ol {
   list-style: none;
 }
 
-blockquote,
-q {
-  quotes: none;
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
 }
 
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-  content: "";
-  content: none;
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
 }
 
-a {
-  margin: 0;
-  padding: 0;
-  font-size: 100%;
-  vertical-align: baseline;
-  background: transparent;
+/* Natural flow and rhythm in articles by default */
+article > * + * {
+  margin-top: 1em;
 }
 
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
+/* Inherit fonts for inputs and buttons */
 input,
+button,
+textarea,
 select {
-  vertical-align: middle;
+  font: inherit;
+}
+
+/* Blur images when they have no alt attribute */
+img:not([alt]) {
+  filter: blur(10px);
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 /* Styles */
@@ -213,9 +171,12 @@ select {
   --malachite-green-7: #1d4925;
   --malachite-green-8: #14321a;
   --malachite-green-9: #0c1d0f;
+  --brand-focus: var(--cyan-3);
   --brand: var(--cyan-5);
   --brand-hover: var(--cyan-7);
-  --danger: var(--sanguine-6)
+  --danger: var(--sanguine-6);
+  --list-item-bg: #F4F4F4;
+  --todo-input-focus: #eaeaea;
 }
 
 html {
@@ -225,6 +186,33 @@ html {
 h1 {
   font-size: 3rem;
   color: var(--brand);
+}
+
+/* Composition */
+.flow > :where(:not(:first-child)) {
+    margin-top: var(--flow-space, 1rem);
+}
+
+.wrapper {
+    width: min(75%, 65ch);
+    margin: auto;
+}
+
+/* Utilities */
+
+.w-full {
+    width: 100%;
+}
+
+.radius {
+    border-radius: 0.5rem;
+}
+
+/* Blocks */
+
+.list-item {
+    padding: 0.5rem;
+    background-color: var(--list-item-bg);
 }
 
 #app {
@@ -244,20 +232,32 @@ ul {
   padding: 0;
 }
 
-#new-todo-form {
+.flex-row {
   display: flex;
-  padding: 1rem 0;
+  gap: var(--flex-gap, 1rem);
 }
 
 #new-todo-name {
   font-size: 20px;
   flex-grow: 1;
+  background-color: var(--list-item-bg);
+  border: 0;
+  border-bottom: 0.1rem solid var(--brand);
+  transition: 0.3s;
+  padding: 0.5rem;
 }
 
-#new-todo-button {
-  margin-left: 1rem;
-  padding: 0.5rem;
-  border-radius: 100%;
+#new-todo-name:focus {
+    outline: 0;
+    border-bottom: 0.1rem solid var(--brand-focus);
+    background-color: var(--todo-input-focus);
+}
+
+.button {
+  padding: 0.6rem 1.5rem;
+  font: inherit;
+  display: inline-block;
+  line-height: 1;
   background-color: var(--brand);
   color: white;
   cursor: pointer;
@@ -265,16 +265,25 @@ ul {
   transition: 0.3s;
 }
 
-#new-todo-button:hover {
+.button:focus {
+    outline-offset: -0.4rem;
+    outline: 1px solid;
+  }
+
+.button:hover {
   background-color: var(--brand-hover);
 }
 
+.button:active {
+  transform: scale(0.95);
+}
+
 .checkbox {
-  margin: 0;
+  margin-left: 0;
   margin-right: 1rem;
   cursor: pointer;
-  height: 1.5rem;
-  width: 1.5rem;
+  height: 1rem;
+  width: 1rem;
   appearance: none;
   border: 1px solid var(--brand);
   border-radius: 4px;
@@ -290,8 +299,8 @@ ul {
   display: block;
   color: white;
   position: absolute;
-  left: 0.4rem;
-  top: 0.3rem;
+  left: 0.15rem;
+  top: 0.7rem;
   cursor: pointer;
 }
 
@@ -300,9 +309,9 @@ ul {
   margin-right: auto;
 }
 
-#todo-list li {
+/* #todo-list li {
   padding: 0.5rem 0;
-}
+} */
 
 #todo-list li {
   display: flex;
@@ -312,14 +321,20 @@ ul {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  text-align: center;
   position: relative;
   width: 100%;
 }
 
+#todo-list li label div {
+  display: inline;
+  height: 20px;
+  line-height: 25px;
+}
+
 .close {
-  padding-left: 1rem;
+  border: 0;
   font-size: 1.5rem;
+  background-color: transparent;
 }
 
 .close:hover {
@@ -332,10 +347,19 @@ ul {
 }
 
 @media (prefers-color-scheme: dark) {
+  :root {
+    --list-item-bg: #2B2A33;
+    --todo-input-focus: #3b3a46;
+  }
+
   #app {
     color: #959ea7;
   }
   .completed {
     color: DimGray;
+  }
+
+  .list-item {
+    background-color: var(--list-item-bg);
   }
 }
