@@ -1,18 +1,18 @@
 /* Reset */
 
-// Modern CSS reset: https://github.com/hankchizljaw/modern-css-reset
+/* Modern CSS reset: https://github.com/hankchizljaw/modern-css-reset */
 
 /* Box sizing rules */
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 /* Remove default padding */
 ul,
 ol {
-  padding: 0;
+    padding: 0;
 }
 
 /* Remove default margin */
@@ -28,42 +28,42 @@ figure,
 blockquote,
 dl,
 dd {
-  margin: 0;
+    margin: 0;
 }
 
 /* Set core root defaults */
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 /* Set core body defaults */
 body {
-  min-height: 100vh;
-  text-rendering: optimizeSpeed;
-  line-height: 1.5;
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
 }
 
 /* Remove list styles on ul, ol elements with a class attribute */
 ul,
 ol {
-  list-style: none;
+    list-style: none;
 }
 
 /* A elements that don't have a class get default styles */
 a:not([class]) {
-  text-decoration-skip-ink: auto;
+    text-decoration-skip-ink: auto;
 }
 
 /* Make images easier to work with */
 img,
 picture {
-  max-width: 100%;
-  display: block;
+    max-width: 100%;
+    display: block;
 }
 
 /* Natural flow and rhythm in articles by default */
-article > * + * {
-  margin-top: 1em;
+article>*+* {
+    margin-top: 1em;
 }
 
 /* Inherit fonts for inputs and buttons */
@@ -71,125 +71,125 @@ input,
 button,
 textarea,
 select {
-  font: inherit;
+    font: inherit;
 }
 
 /* Blur images when they have no alt attribute */
 img:not([alt]) {
-  filter: blur(10px);
+    filter: blur(10px);
 }
 
 /* Remove all animations and transitions for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
 }
 
 /* Styles */
 :root {
-  --cyan-0: #bfeeea;
-  --cyan-1: #69ddd6;
-  --cyan-2: #4ec4bc;
-  --cyan-3: #43a9a3;
-  --cyan-4: #398f8a;
-  --cyan-5: #2f7672;
-  --cyan-6: #255e5b;
-  --cyan-7: #1c4744;
-  --cyan-8: #14312f;
-  --cyan-9: #0c1d1c;
-  --sapphire-blue-0: #dfe4f6;
-  --sapphire-blue-1: #bfcaee;
-  --sapphire-blue-2: #9fb1e7;
-  --sapphire-blue-3: #7d98e0;
-  --sapphire-blue-4: #5780da;
-  --sapphire-blue-5: #4869b4;
-  --sapphire-blue-6: #39548f;
-  --sapphire-blue-7: #2b3f6c;
-  --sapphire-blue-8: #1e2c4b;
-  --sapphire-blue-9: #111a2c;
-  --violet-0: #e9e1f6;
-  --violet-1: #d3c4ef;
-  --violet-2: #bfa7e8;
-  --violet-3: #ac89e2;
-  --violet-4: #9a6add;
-  --violet-5: #8550c8;
-  --violet-6: #6a3fa0;
-  --violet-7: #503079;
-  --violet-8: #372154;
-  --violet-9: #201331;
-  --fuschia-0: #f5def0;
-  --fuschia-1: #edbde2;
-  --fuschia-2: #e69ad5;
-  --fuschia-3: #df73c9;
-  --fuschia-4: #cd52b6;
-  --fuschia-5: #aa4396;
-  --fuschia-6: #873678;
-  --fuschia-7: #66295b;
-  --fuschia-8: #471c3f;
-  --fuschia-9: #291025;
-  --sanguine-0: #f6dfe0;
-  --sanguine-1: #eec0c2;
-  --sanguine-2: #e7a0a3;
-  --sanguine-3: #e07d82;
-  --sanguine-4: #da565e;
-  --sanguine-5: #b4474e;
-  --sanguine-6: #90393e;
-  --sanguine-7: #6d2b2f;
-  --sanguine-8: #4c1e21;
-  --sanguine-9: #2c1213;
-  --amber-0: #f1e3cc;
-  --amber-1: #e4c793;
-  --amber-2: #d5ad54;
-  --amber-3: #b89549;
-  --amber-4: #9c7e3e;
-  --amber-5: #806833;
-  --amber-6: #665329;
-  --amber-7: #4d3e1e;
-  --amber-8: #352b15;
-  --amber-9: #1f190c;
-  --chartreuse-0: #d3edbb;
-  --chartreuse-1: #a3dc5e;
-  --chartreuse-2: #8ec14d;
-  --chartreuse-3: #7ba742;
-  --chartreuse-4: #688d38;
-  --chartreuse-5: #56752e;
-  --chartreuse-6: #445d25;
-  --chartreuse-7: #34461c;
-  --chartreuse-8: #233013;
-  --chartreuse-9: #151c0b;
-  --malachite-green-0: #c5efcb;
-  --malachite-green-1: #7de08d;
-  --malachite-green-2: #50c967;
-  --malachite-green-3: #45ae59;
-  --malachite-green-4: #3b934b;
-  --malachite-green-5: #307a3e;
-  --malachite-green-6: #276132;
-  --malachite-green-7: #1d4925;
-  --malachite-green-8: #14321a;
-  --malachite-green-9: #0c1d0f;
-  --brand-focus: var(--cyan-3);
-  --brand: var(--cyan-5);
-  --brand-hover: var(--cyan-7);
-  --danger: var(--sanguine-6);
-  --list-item-bg: #F4F4F4;
-  --todo-input-focus: #eaeaea;
+    --cyan-0: #bfeeea;
+    --cyan-1: #69ddd6;
+    --cyan-2: #4ec4bc;
+    --cyan-3: #43a9a3;
+    --cyan-4: #398f8a;
+    --cyan-5: #2f7672;
+    --cyan-6: #255e5b;
+    --cyan-7: #1c4744;
+    --cyan-8: #14312f;
+    --cyan-9: #0c1d1c;
+    --sapphire-blue-0: #dfe4f6;
+    --sapphire-blue-1: #bfcaee;
+    --sapphire-blue-2: #9fb1e7;
+    --sapphire-blue-3: #7d98e0;
+    --sapphire-blue-4: #5780da;
+    --sapphire-blue-5: #4869b4;
+    --sapphire-blue-6: #39548f;
+    --sapphire-blue-7: #2b3f6c;
+    --sapphire-blue-8: #1e2c4b;
+    --sapphire-blue-9: #111a2c;
+    --violet-0: #e9e1f6;
+    --violet-1: #d3c4ef;
+    --violet-2: #bfa7e8;
+    --violet-3: #ac89e2;
+    --violet-4: #9a6add;
+    --violet-5: #8550c8;
+    --violet-6: #6a3fa0;
+    --violet-7: #503079;
+    --violet-8: #372154;
+    --violet-9: #201331;
+    --fuschia-0: #f5def0;
+    --fuschia-1: #edbde2;
+    --fuschia-2: #e69ad5;
+    --fuschia-3: #df73c9;
+    --fuschia-4: #cd52b6;
+    --fuschia-5: #aa4396;
+    --fuschia-6: #873678;
+    --fuschia-7: #66295b;
+    --fuschia-8: #471c3f;
+    --fuschia-9: #291025;
+    --sanguine-0: #f6dfe0;
+    --sanguine-1: #eec0c2;
+    --sanguine-2: #e7a0a3;
+    --sanguine-3: #e07d82;
+    --sanguine-4: #da565e;
+    --sanguine-5: #b4474e;
+    --sanguine-6: #90393e;
+    --sanguine-7: #6d2b2f;
+    --sanguine-8: #4c1e21;
+    --sanguine-9: #2c1213;
+    --amber-0: #f1e3cc;
+    --amber-1: #e4c793;
+    --amber-2: #d5ad54;
+    --amber-3: #b89549;
+    --amber-4: #9c7e3e;
+    --amber-5: #806833;
+    --amber-6: #665329;
+    --amber-7: #4d3e1e;
+    --amber-8: #352b15;
+    --amber-9: #1f190c;
+    --chartreuse-0: #d3edbb;
+    --chartreuse-1: #a3dc5e;
+    --chartreuse-2: #8ec14d;
+    --chartreuse-3: #7ba742;
+    --chartreuse-4: #688d38;
+    --chartreuse-5: #56752e;
+    --chartreuse-6: #445d25;
+    --chartreuse-7: #34461c;
+    --chartreuse-8: #233013;
+    --chartreuse-9: #151c0b;
+    --malachite-green-0: #c5efcb;
+    --malachite-green-1: #7de08d;
+    --malachite-green-2: #50c967;
+    --malachite-green-3: #45ae59;
+    --malachite-green-4: #3b934b;
+    --malachite-green-5: #307a3e;
+    --malachite-green-6: #276132;
+    --malachite-green-7: #1d4925;
+    --malachite-green-8: #14321a;
+    --malachite-green-9: #0c1d0f;
+    --brand-focus: var(--cyan-3);
+    --brand: var(--cyan-5);
+    --brand-hover: var(--cyan-7);
+    --danger: var(--sanguine-6);
+    --list-item-bg: #F4F4F4;
+    --todo-input-focus: #eaeaea;
 }
 
 html {
-  font-size: 20px;
+    font-size: 20px;
 }
 
 h1 {
-  font-size: 3rem;
-  color: var(--brand);
+    font-size: 3rem;
+    color: var(--brand);
 }
 
 /* Composition */
-.flow > :where(:not(:first-child)) {
+.flow> :where(:not(:first-child)) {
     margin-top: var(--flow-space, 1rem);
 }
 
@@ -208,13 +208,17 @@ h1 {
     border-radius: 0.5rem;
 }
 
+.border-none {
+    border-width: 0;
+}
+
 .flex-grow {
     flex-grow: 1;
 }
 
 .flex {
-  display: flex;
-  gap: var(--flex-gap, 1rem);
+    display: flex;
+    gap: var(--flex-gap, 1rem);
 }
 
 .flex-col {
@@ -233,6 +237,14 @@ h1 {
 
 .text-nowrap {
     white-space: nowrap;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.inline {
+    display: inline;
 }
 
 @media only screen and (min-width: 768px) {
@@ -255,39 +267,70 @@ h1 {
 
 /* Blocks */
 
+.status {
+    height: fit-content;
+    align-items: center;
+    padding: 0.2rem 0.4rem;
+    margin: 0;
+    line-height: 1.1;
+    font-size: 1.25rem;
+    cursor: pointer;
+
+}
+
 .list-item {
     padding: 0.5rem;
     background-color: var(--list-item-bg);
 }
 
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
-  margin-top: 60px;
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  align-items: center;
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #2c3e50;
+    margin-top: 60px;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
 }
 
 ul {
-  list-style: none;
-  padding: 0;
+    list-style: none;
+    padding: 0;
 }
 
+/* Exceptions */
 
+[data-status="NotStarted"] {
+    background-color: var(--malachite-green-1);
+    color: var(--malachite-green-7);
+}
+
+[data-status="InProgress"] {
+    background-color: var(--amber-1);
+    color: var(--amber-7);
+}
+
+[data-status="Completed"] {
+    background-color: var(--sapphire-blue-1);
+    color: var(--sapphire-blue-7);
+}
+
+[data-status="OnHold"] {
+    background-color: var(--fuschia-1);
+    color: var(--fuschia-7);
+}
 
 #new-todo-name {
-  font-size: 20px;
-  flex-grow: 3;
-  background-color: var(--list-item-bg);
-  border: 0;
-  border-bottom: 0.1rem solid var(--brand);
-  transition: 0.3s;
-  padding: 0.5rem;
-  min-width: none;
+    font-size: 20px;
+    flex-grow: 3;
+    background-color: var(--list-item-bg);
+    border: 0;
+    border-bottom: 0.1rem solid var(--brand);
+    transition: 0.3s;
+    padding: 0.5rem;
+    min-width: none;
 }
 
 #new-todo-name:focus {
@@ -297,60 +340,60 @@ ul {
 }
 
 .button {
-  padding: 0.6rem 1.5rem;
-  font: inherit;
-  display: inline-block;
-  line-height: 1;
-  background-color: var(--brand);
-  color: white;
-  cursor: pointer;
-  border: none;
-  transition: 0.3s;
-  min-width: 1rem;
+    padding: 0.6rem 1.5rem;
+    font: inherit;
+    display: inline-block;
+    line-height: 1;
+    background-color: var(--brand);
+    color: white;
+    cursor: pointer;
+    border: none;
+    transition: 0.3s;
+    min-width: 1rem;
 }
 
 .button:focus {
     outline-offset: -0.4rem;
     outline: 1px solid;
-  }
+}
 
 .button:hover {
-  background-color: var(--brand-hover);
+    background-color: var(--brand-hover);
 }
 
 .button:active {
-  transform: scale(0.95);
+    transform: scale(0.95);
 }
 
 .checkbox {
-  margin-left: 0;
-  margin-right: 1rem;
-  cursor: pointer;
-  min-height: 1rem;
-  min-width: 1rem;
-  appearance: none;
-  border: 1px solid var(--brand);
-  border-radius: 4px;
-  transition-duration: 0.3s;
+    margin-left: 0;
+    margin-right: 1rem;
+    cursor: pointer;
+    min-height: 1rem;
+    min-width: 1rem;
+    appearance: none;
+    border: 1px solid var(--brand);
+    border-radius: 4px;
+    transition-duration: 0.3s;
 }
 
 .checkbox:checked {
-  background-color: var(--brand);
+    background-color: var(--brand);
 }
 
-.checkbox:checked + div::before {
-  content: "\2713";
-  display: block;
-  color: white;
-  position: absolute;
-  left: 0.15rem;
-  top: 0.5rem;
-  cursor: pointer;
+.checkbox:checked+div::before {
+    content: "\2713";
+    display: block;
+    color: white;
+    position: absolute;
+    left: 0.15rem;
+    top: 0.2rem;
+    cursor: pointer;
 }
 
-.checkbox + div {
-  transition: 0.3s;
-  margin-right: auto;
+.checkbox+div {
+    transition: 0.3s;
+    margin-right: auto;
 }
 
 /* #todo-list li {
@@ -358,50 +401,52 @@ ul {
 } */
 
 #todo-list li {
-  display: flex;
+    display: flex;
+    align-items: center;
 }
 
 #todo-list li label {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  position: relative;
-  width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    width: 100%;
 }
 
 #todo-list li label div {
-  display: inline;
+    display: inline;
 }
 
 .close {
-  border: 0;
-  font-size: 1.5rem;
-  background-color: transparent;
+    border: 0;
+    font-size: 1.5rem;
+    background-color: transparent;
 }
 
 .close:hover {
-  color: var(--danger);
+    color: var(--danger);
 }
 
 .completed {
-  text-decoration: line-through;
-  color: gray;
+    text-decoration: line-through;
+    color: gray;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --list-item-bg: #2B2A33;
-    --todo-input-focus: #3b3a46;
-  }
+    :root {
+        --list-item-bg: #2B2A33;
+        --todo-input-focus: #3b3a46;
+    }
 
-  #app {
-    color: #959ea7;
-  }
-  .completed {
-    color: DimGray;
-  }
+    #app {
+        color: #959ea7;
+    }
 
-  .list-item {
-    background-color: var(--list-item-bg);
-  }
+    .completed {
+        color: DimGray;
+    }
+
+    .list-item {
+        background-color: var(--list-item-bg);
+    }
 }
