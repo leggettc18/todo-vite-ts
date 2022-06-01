@@ -12,11 +12,25 @@
 <body>
     <div id="app" class="wrapper overflow-hidden">
         <h1>Todo List</h1>
-        <div class="w-full flow">
+        <div id="todo-view" class="w-full flow">
             <form id=new-todo-form class="flex flex-col md:flex-row">
                 <input id="new-todo-name" class="radius" />
                 <button id="new-todo-button" class="radius md:flex-grow-0 flex-grow | button" type="submit">Add</button>
             </form>
+            <div id="board" class="w-full flex">
+                <div id="not-started" class="h-20 flex-grow radius" data-status="NotStarted">
+                    <p class="p-1">Not Started</p>
+                </div>
+                <div id="in-progress" class="h-20 flex-grow radius" data-status="InProgress">
+                    <p class="p-1">In Progress</p>
+                </div>
+                <div id="completed" class="h-20 flex-grow radius" data-status="Completed">
+                    <p class="p-1">Completed</p>
+                </div>
+                <div id="on-hold" class="h-20 flex-grow radius" data-status="OnHold">
+                    <p class="p-1">On Hold</p>
+                </div>
+            </div>
             <ul id="todo-list" class="flow"></ul>
         </div>
     </div>

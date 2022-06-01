@@ -200,8 +200,20 @@ h1 {
 
 /* Utilities */
 
+.p-1 {
+    padding: 0.5rem;
+}
+
+.w-10 {
+    width: 10rem;
+}
+
 .w-full {
     width: 100%;
+}
+
+.h-20 {
+    height: 20rem;
 }
 
 .radius {

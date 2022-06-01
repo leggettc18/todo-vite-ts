@@ -35,6 +35,7 @@ type Todo = {
     status: Status
 }
 
+const mainView = document.querySelector<HTMLDivElement>("#todo-view");
 const todoList = document.querySelector<HTMLUListElement>("#todo-list");
 const newTodoForm = document.querySelector<HTMLFormElement>("#new-todo-form");
 const newTodoInput = document.querySelector<HTMLInputElement>("#new-todo-name");
